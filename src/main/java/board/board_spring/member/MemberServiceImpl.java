@@ -1,7 +1,5 @@
-package board.board_spring.service;
+package board.board_spring.member;
 
-import board.board_spring.domain.Member;
-import board.board_spring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,18 +12,19 @@ import java.util.Optional;
 // - 따라서 클래스명과 메서드명은 기술적인 용어보다 비즈니스 도메인에 가까운 용어를 사용하는 것이 좋다.
 @Service
 @Transactional
-public class MemberService {
+public class MemberServiceImpl implements MemberService {
 
     private final MemberRepository memberRepository;
 
     @Autowired
-    public MemberService(MemberRepository memberRepository) {
+    public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
     /**
      * 회원 가입
      */
+    @Override
     public Long join(Member member) {
         validateDuplicateMember(member);
 
@@ -42,10 +41,12 @@ public class MemberService {
     /**
      * 전체 회원 조회
      */
+    @Override
     public List<Member> findMembers() {
         return memberRepository.findAll();
     }
 
+    @Override
     public Optional<Member> findOne(Long memberId) {
         return memberRepository.findById(memberId);
     }

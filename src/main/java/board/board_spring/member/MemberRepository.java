@@ -1,6 +1,5 @@
-package board.board_spring.repository;
+package board.board_spring.member;
 
-import board.board_spring.domain.Member;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

@@ -1,7 +1,5 @@
-package board.board_spring.controller;
+package board.board_spring.member;
 
-import board.board_spring.domain.Member;
-import board.board_spring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +27,7 @@ public class MemberController {
     public String create(MemberForm form) {
         Member member = new Member();
         member.setName(form.getName());
+        member.setGrade(form.getGrade());
         memberService.join(member);
         return "redirect:/";
     }
