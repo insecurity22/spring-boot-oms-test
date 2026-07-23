@@ -1,6 +1,7 @@
 package board.board_spring.repository;
 
-import board.board_spring.domain.Member;
+import board.board_spring.member.Member;
+import board.board_spring.member.MemberRepository;
 import jakarta.persistence.EntityManager;
 
 import java.util.List;

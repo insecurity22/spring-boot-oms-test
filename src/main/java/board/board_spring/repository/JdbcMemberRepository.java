@@ -1,12 +1,14 @@
 package board.board_spring.repository;
 
-import board.board_spring.domain.Member;
+import board.board_spring.member.Member;
 
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import board.board_spring.member.MemberRepository;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 
 public class JdbcMemberRepository implements MemberRepository {

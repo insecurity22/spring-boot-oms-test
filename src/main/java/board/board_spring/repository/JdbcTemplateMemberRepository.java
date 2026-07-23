@@ -1,6 +1,7 @@
 package board.board_spring.repository;
 
-import board.board_spring.domain.Member;
+import board.board_spring.member.Member;
+import board.board_spring.member.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -10,7 +11,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import javax.sql.DataSource;
 import java.util.*;
 
-public class JdbcTemplateMemberRepository implements MemberRepository  {
+public class JdbcTemplateMemberRepository implements MemberRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
